@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "analysis": {
+      "normalizer": {
+        "my_normalizer": {
+          "filter": ["lowercase"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "userId": {
+        "type": "long"
+      },
+      "loginId": {
+        "type": "keyword",
+        "normalizer": "my_normalizer"
+      },
+      "name": {
+        "type": "text"
+      }
+    }
+  }
+}

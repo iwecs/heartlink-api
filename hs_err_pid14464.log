@@ -1,0 +1,50 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8fa20ccc9, pid=14464, tid=21180
+#
+# JRE version: OpenJDK Runtime Environment (11.0.1+3) (build 11.0.0.1+3-5)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.0.1+3-5, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x6cccc9]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58407 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=heartlink-api -Dfile.encoding=UTF-8 com.ss.heartlinkapi.HeartlinkApiApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz, 12 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.4957)
+Time: Tue Oct 29 10:09:25 2024 대한민국 표준시 elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000018b4178b800):  WatcherThread [stack: 0x000000115a700000,0x000000115a800000] [id=21180]
+
+Stack: [0x000000115a700000,0x000000115a800000],  sp=0x000000115a7ff550,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6cccc9]
+V  [jvm.dll+0x71847d]
+V  [jvm.dll+0x73de29]
+V  [jvm.dll+0x639e42]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000c0000000b
+
+
+Register to memory mapping:
+
+RIP=0x00007ff8fa20ccc9 jvm.dll
+RAX=0x0000018b4171a450 points into unknown readable memory
+RBX=0x0 is NULL
+RCX=0x0000000c0000000b is an unknown value
+RDX=0x000000000000003e is an unknown value
+RSP=0x000000115a7ff550 points into unknown readable memory
+RBP=

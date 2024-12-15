@@ -1,0 +1,41 @@
+{
+  "settings": {
+    "analysis": {
+      "tokenizer": {
+        "ngram_tokenizer": {
+          "type": "ngram",
+          "min_gram": 1,
+          "max_gram": 20
+        }
+      },
+      "analyzer": {
+        "custom_analyzer": {
+          "type": "custom",
+          "tokenizer": "ngram_tokenizer",
+          "filter": ["word_delimiter", "lowercase", "stop"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "searchHistoryId": {
+        "type": "long"
+      },
+      "userId": {
+        "type": "long"
+      },
+      "keyword": {
+        "type": "text",
+        "analyzer": "custom_analyzer"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "date": {
+        "type": "date",
+        "format": "uuuu-MM-dd'T'HH:mm:ss||uuuu-MM-dd"
+      }
+    }
+  }
+}

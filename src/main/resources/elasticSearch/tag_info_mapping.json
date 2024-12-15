@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "properties": {
+      "tagId": {
+        "type": "long"
+      },
+      "tagName": {
+        "type": "text",
+        "analyzer": "custom_analyzer"
+      }
+    }
+  }
+}
